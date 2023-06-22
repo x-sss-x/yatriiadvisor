@@ -46,56 +46,56 @@ export default function RootLayout({ children }: Props) {
             </Link>
             <Link
               className="flex items-center gap-3 text-xl hover:bg-slate-100 p-2 px-4 rounded-md"
-              href="/"
+              href="/DASHBOARD/DestinationPage"
             >
               <FaMapMarkerAlt className="text-button text-2xl" />
               <span>Destination</span>
             </Link>
             <Link
               className="flex items-center gap-3 text-xl hover:bg-slate-100 p-2 px-4 rounded-md"
-              href="/"
+              href="/DASHBOARD/Profile"
             >
               <FaUserAlt className="text-button text-2xl" />
               <span>Profile</span>
             </Link>
-            <Link
+            {/* <Link
               className="flex items-center gap-3 text-xl hover:bg-slate-100 p-2 px-4 rounded-md"
-              href="/"
+              href="#"
             >
               <FaBook className="text-button text-2xl" />
               <span>About Us</span>
-            </Link>
+            </Link> */}
             <Link
               className="flex items-center gap-3 text-xl hover:bg-slate-100 p-2 px-4 rounded-md"
-              href="/"
+              href="/DASHBOARD/Favourite"
             >
               <FaHeart className="text-button text-2xl" />
               <span>Favourites</span>
             </Link>
             <Link
               className="flex items-center gap-3 text-xl hover:bg-slate-100 p-2 px-4 rounded-md"
-              href="/"
+              href="/DASHBOARD/SearchPlan"
             >
               <FaPaperPlane className="text-button text-2xl" />
               <span>Plans</span>
             </Link>
             <Link
               className="flex items-center gap-3 text-xl hover:bg-slate-100 p-2 px-4 rounded-md"
-              href="/"
+              href="/DASHBOARD/SharedTrips"
             >
               <FaPaperPlane className="text-button text-2xl" />
               <span>Shared Plans</span>
             </Link>
-            <Link
+            {/* <Link
               className="flex items-center gap-3 text-xl hover:bg-slate-100 p-2 px-4 rounded-md"
-              href="/"
+              href="#"
             >
               <FaHandsHelping className="text-button text-2xl" />
               <span>Help</span>
-            </Link>
+            </Link> */}
             <Link
               className="flex items-center gap-3 text-xl hover:bg-slate-100 p-2 px-4 rounded-md"
-              href="/"
+              href="/DASHBOARD/TouristExperience"
             >
               <FaHireAHelper className="text-button text-2xl" />
               <span>Experience</span>

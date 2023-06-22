@@ -1,17 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit';
-import {useSelector} from "react-redux";
-import postplaceSlice from './postplacebyguide.slice';
-
-
+import { configureStore } from "@reduxjs/toolkit";
+import { useSelector } from "react-redux";
 
 export const store = configureStore({
-  reducer: {
-   notes:postplaceSlice.reducer,
-   
-  },
+  reducer: {},
 });
 
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
-export const useAppSelector = useSelector<RootState>
-
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+export const useAppSelector = useSelector<RootState>;
