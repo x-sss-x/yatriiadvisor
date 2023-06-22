@@ -16,6 +16,7 @@ const PostPlaceDetails = () => {
 
   const handlePhotoChange = (event:any) => {
     const selectedFiles = Array.from(event.target.files);
+    //@ts-ignore
     setPhotos(selectedFiles);
   };
 
