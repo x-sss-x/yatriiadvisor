@@ -1,7 +1,7 @@
-"use client"
-import { useState } from 'react';
-import Link from 'next/link';
-import { FaHome, FaUser, FaEnvelope } from 'react-icons/fa';
+"use client";
+import { useState } from "react";
+import Link from "next/link";
+import { FaHome, FaUser, FaEnvelope } from "react-icons/fa";
 
 const Sidebar1 = () => {
   return (
@@ -9,23 +9,17 @@ const Sidebar1 = () => {
       <ul>
         <li>
           <Link href="/">
-            
-              <FaHome /> Home
-           
+            <FaHome /> Home
           </Link>
         </li>
         <li>
           <Link href="/about">
-           
-              <FaUser /> About
-            
+            <FaUser /> About
           </Link>
         </li>
         <li>
           <Link href="/contact">
-            
-              <FaEnvelope /> Contact
-            
+            <FaEnvelope /> Contact
           </Link>
         </li>
       </ul>

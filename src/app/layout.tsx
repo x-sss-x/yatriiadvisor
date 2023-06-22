@@ -3,9 +3,19 @@ import { useState } from "react";
 import "../styles/globals.css";
 import Providers from "./providers";
 import { AiOutlineBars, AiOutlineClose } from "react-icons/ai";
-import {  RiLogoutBoxLine} from "react-icons/ri";
-import { FaBook, FaHandsHelping, FaHeart, FaHireAHelper, FaHome, FaMapMarkerAlt, FaPaperPlane,  FaUserAlt } from "react-icons/fa";
+import { RiLogoutBoxLine } from "react-icons/ri";
+import {
+  FaBook,
+  FaHandsHelping,
+  FaHeart,
+  FaHireAHelper,
+  FaHome,
+  FaMapMarkerAlt,
+  FaPaperPlane,
+  FaUserAlt,
+} from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 interface Props {
   children: React.ReactNode;
 }
@@ -19,86 +29,99 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <body className="overflow-hidden">
-        <div className="bg-br ">
-          {" "}
-          <div
-            className="navbar-container bg-button pb-4 border-b border-black"
-            style={{ position: "fixed", top: 0, width: "100%", zIndex: 999 }}
-          >
+        {/* sidebar */}
+        <div
+          className={
+            `sidebar fixed transition-all duration-300 top-0 bg-white z-40 p-10 h-screen ` +
+            (isSidebarOpen ? "translate-x-0" : "-translate-x-full")
+          }
+        >
+          <ul className="flex flex-col gap-3">
+            <Link
+              className="flex items-center gap-3 text-xl hover:bg-slate-100 p-2 px-4 rounded-md"
+              href="/"
+            >
+              <FaHome className="text-button text-2xl" />
+              <span>Home</span>
+            </Link>
+            <Link
+              className="flex items-center gap-3 text-xl hover:bg-slate-100 p-2 px-4 rounded-md"
+              href="/"
+            >
+              <FaMapMarkerAlt className="text-button text-2xl" />
+              <span>Destination</span>
+            </Link>
+            <Link
+              className="flex items-center gap-3 text-xl hover:bg-slate-100 p-2 px-4 rounded-md"
+              href="/"
+            >
+              <FaUserAlt className="text-button text-2xl" />
+              <span>Profile</span>
+            </Link>
+            <Link
+              className="flex items-center gap-3 text-xl hover:bg-slate-100 p-2 px-4 rounded-md"
+              href="/"
+            >
+              <FaBook className="text-button text-2xl" />
+              <span>About Us</span>
+            </Link>
+            <Link
+              className="flex items-center gap-3 text-xl hover:bg-slate-100 p-2 px-4 rounded-md"
+              href="/"
+            >
+              <FaHeart className="text-button text-2xl" />
+              <span>Favourites</span>
+            </Link>
+            <Link
+              className="flex items-center gap-3 text-xl hover:bg-slate-100 p-2 px-4 rounded-md"
+              href="/"
+            >
+              <FaPaperPlane className="text-button text-2xl" />
+              <span>Plans</span>
+            </Link>
+            <Link
+              className="flex items-center gap-3 text-xl hover:bg-slate-100 p-2 px-4 rounded-md"
+              href="/"
+            >
+              <FaPaperPlane className="text-button text-2xl" />
+              <span>Shared Plans</span>
+            </Link>
+            <Link
+              className="flex items-center gap-3 text-xl hover:bg-slate-100 p-2 px-4 rounded-md"
+              href="/"
+            >
+              <FaHandsHelping className="text-button text-2xl" />
+              <span>Help</span>
+            </Link>
+            <Link
+              className="flex items-center gap-3 text-xl hover:bg-slate-100 p-2 px-4 rounded-md"
+              href="/"
+            >
+              <FaHireAHelper className="text-button text-2xl" />
+              <span>Experience</span>
+            </Link>
+            <Link
+              className="flex items-center gap-3 text-xl hover:bg-slate-100 p-2 px-4 rounded-md"
+              href="/"
+            >
+              <RiLogoutBoxLine className="text-button text-2xl" />
+              <span>Logout</span>
+            </Link>
+          </ul>
+        </div>
+
+        <div className="bg-br">
+          <div className="bg-button flex px-5 h-20 border-b border-black items-center justify-between">
             <div className="logo">
-              <img
+              <Image
                 src="/logo.png" // Replace with the path to your logo image in the public folder
-                alt=""
+                alt="logo"
                 width={200} // Specify the desired width of the image
                 height={200} // Specify the desired height of the image
               />
             </div>
-            <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
-              <ul>
-                <li>
-                  <Link href="/">
-                    <FaHome className="text-button"/>
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <a href="/Dashboard/DestinationPage">
-                    <FaMapMarkerAlt className="text-button"/>
-                    Destination
-                  </a>
-                </li>
-                <li>
-                  <a href="/Dashboard/Profile">
-                    <FaUserAlt className="text-button" />
-                    Profile
-                  </a>
-                </li>
-                <li>
-                  <a href="">
-                    <FaBook className="text-button" />
-                    About US
-                  </a>
-                </li>
-                <li>
-                  <a href="/Dashboard/Favourite">
-                    <FaHeart className="text-button" />
-                    Favourites
-                  </a>
-                </li>
-                <li>
-                  <a href="/Dashboard/SearchPlan">
-                    <FaPaperPlane/>
-                    Plans
-                  </a>
-                </li>
-                <li>
-                  <a href="/Dashboard/SharedTrips">
-                    <FaPaperPlane/>
-                    Shared Plans
-                  </a>
-                </li>
-                <li>
-                  <a href="">
-                    <FaHandsHelping className="text-button" />
-                   Help
-                  </a>
-                </li>
-                <li>
-                  <a href="/Dashboard/TouristExperience">
-                    <FaHireAHelper className="text-button" />
-                   Experience
-                  </a>
-                </li>
-              
-              <div className=" container flex pt-10"><li>
-                  <a href="">
-                    <RiLogoutBoxLine/>
-                   Logout
-                  </a>
-                </li></div>
-              </ul>
-            </div>
-            <button className="sidebar-toggle" onClick={toggleSidebar}>
+
+            <button className="text-3xl text-white" onClick={toggleSidebar}>
               {isSidebarOpen ? <AiOutlineClose /> : <AiOutlineBars />}
             </button>
           </div>
