@@ -19,6 +19,7 @@ const sharedTripsData = [
 ];
 
 // Component for displaying the shared trip details
+{/* @ts-ignore */}
 const TripDetails = ({ trip}) => {
   return (
     <div className="p-4 border border-gray-300">
