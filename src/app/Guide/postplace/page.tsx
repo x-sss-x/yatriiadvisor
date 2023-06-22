@@ -1,26 +1,26 @@
-"use client"
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
 
 const PostPlaceDetails = () => {
-  const [placeName, setPlaceName] = useState('');
-  const [destination, setDestination] = useState('');
-  const [description, setDescription] = useState('');
-  const [bestSeason, setBestSeason] = useState('');
-  const [fromMonth, setFromMonth] = useState('');
-  const [toMonth, setToMonth] = useState('');
-  const [bestTimeFrom, setBestTimeFrom] = useState('');
-  const [bestTimeTo, setBestTimeTo] = useState('');
+  const [placeName, setPlaceName] = useState("");
+  const [destination, setDestination] = useState("");
+  const [description, setDescription] = useState("");
+  const [bestSeason, setBestSeason] = useState("");
+  const [fromMonth, setFromMonth] = useState("");
+  const [toMonth, setToMonth] = useState("");
+  const [bestTimeFrom, setBestTimeFrom] = useState("");
+  const [bestTimeTo, setBestTimeTo] = useState("");
   const [photos, setPhotos] = useState([]);
-  const [thingsToDo, setThingsToDo] = useState('');
-  const [location, setLocation] = useState('');
+  const [thingsToDo, setThingsToDo] = useState("");
+  const [location, setLocation] = useState("");
 
-  const handlePhotoChange = (event:any) => {
+  const handlePhotoChange = (event: any) => {
     const selectedFiles = Array.from(event.target.files);
     //@ts-ignore
     setPhotos(selectedFiles);
   };
 
-  const handleSubmit = (e :any) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     // Perform form submission or data handling here
     console.log({
@@ -37,17 +37,17 @@ const PostPlaceDetails = () => {
       location,
     });
     // Clear form fields after submission
-    setPlaceName('');
-    setDestination('');
-    setDescription('');
-    setBestSeason('');
-    setFromMonth('');
-    setToMonth('');
-    setBestTimeFrom('');
-    setBestTimeTo('');
+    setPlaceName("");
+    setDestination("");
+    setDescription("");
+    setBestSeason("");
+    setFromMonth("");
+    setToMonth("");
+    setBestTimeFrom("");
+    setBestTimeTo("");
     setPhotos([]);
-    setThingsToDo('');
-    setLocation('');
+    setThingsToDo("");
+    setLocation("");
   };
 
   return (
