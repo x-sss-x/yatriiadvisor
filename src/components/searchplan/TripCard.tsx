@@ -1,7 +1,7 @@
-"use client"
-import React from 'react';
+"use client";
+import React from "react";
 
-const TripCard = ({ plan}) => {
+const TripCard = ({ plan }: { plan: any }) => {
   const { title, description, duration, price } = plan;
 
   return (

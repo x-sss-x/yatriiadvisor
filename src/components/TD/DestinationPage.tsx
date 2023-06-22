@@ -53,8 +53,10 @@ const Destination: React.FC = () => {
           <div
             key={index}
             className="cursor-pointer"
+            // @ts-ignore
             onClick={() => handleImageClick(destination.image)}
           >
+            {/* @ts-ignore */}
             <img src={destination.image} alt={destination.name} className="w-full h-auto" />
             <p className="text-lg font-semibold">{destination.name}</p>
             <p>Season: {destination.season}</p>

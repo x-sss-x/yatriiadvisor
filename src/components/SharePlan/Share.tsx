@@ -89,10 +89,10 @@ const plans: Plan[] = [
 ];
 
 const ShareApp: React.FC = () => {
-  const [selectedPlan, setSelectedPlan] = useState<Plan | null>(null);
+  const [selectedPlan, setSelectedPlan] = useState<Plan[] | null>(null);
 
   const handleClick = (plan: Plan) => {
-    setSelectedPlan(plan);
+    setSelectedPlan([plan]);
   };
 
   const handleClose = () => {
@@ -144,6 +144,7 @@ const ShareApp: React.FC = () => {
           <div
             key={name}
             className="border rounded-md p-4 cursor-pointer"
+            // @ts-ignore
             onClick={() => handleClick(getTripRows(name))}
           >
             <h2 className="text-lg border border-button bg-white text-button text-center pt-4 rounded-md pb-4 font-bold mb-2">

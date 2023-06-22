@@ -1,11 +1,13 @@
-"use client"
-import React, { useState } from 'react';
-import { destinationsData } from './destinationData';
+"use client";
+import React, { useState } from "react";
+import { destinationsData } from "./destinationData";
 
 const Destinations: React.FC = () => {
-  const [searchSeason, setSearchSeason] = useState('');
-  const [searchState, setSearchState] = useState('');
-  const [selectedDestination, setSelectedDestination] = useState(null);
+  const [searchSeason, setSearchSeason] = useState("");
+  const [searchState, setSearchState] = useState("");
+  const [selectedDestination, setSelectedDestination] = useState<any | null>(
+    null
+  );
 
   // Filter destinations based on search criteria
   const filteredDestinations = destinationsData.filter(
@@ -79,9 +81,7 @@ const Destinations: React.FC = () => {
             <p className="text-sm text-gray-500 mb-2">
               State: {selectedDestination.state}
             </p>
-            <p className="text-sm text-gray-500">
-              {selectedDestination.URL}
-            </p>
+            <p className="text-sm text-gray-500">{selectedDestination.URL}</p>
             <button
               onClick={() => setSelectedDestination(null)}
               className="bg-blue-500 text-white  px-4 py-2 mt-4 rounded-full bg-button"
