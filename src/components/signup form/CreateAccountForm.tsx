@@ -65,7 +65,8 @@ const CreateAccountForm: React.FC = () => {
       selectedPolicy,
     });
   };
-
+  
+  //@ts-ignore
   function handleLogin(event: MouseEvent<HTMLButtonElement, MouseEvent>): void {
     throw new Error("Function not implemented.");
   }
