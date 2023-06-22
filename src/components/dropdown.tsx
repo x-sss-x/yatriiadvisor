@@ -15,6 +15,7 @@ export default function Example() {
   const [selected, setSelected] = useState(null)
 
   const defaultOption = { name: 'Select ' }
+  // @ts-ignore
   const displayValue = selected?.name || defaultOption.name
 
   return (
