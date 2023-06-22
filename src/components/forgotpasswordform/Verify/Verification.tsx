@@ -40,7 +40,7 @@ const Verification = () => {
           pattern="\d *" // Only allow digits as input
         />
         <div className="font-bold text-button font-roboto pt-2 text-center pb-4"
-        style={{ fontSize: 12}}>Didn't Recieve OPT ! <button type="submit" className="font-roboto font-underline text-button  hover:text-br">Resend</button> </div>
+        style={{ fontSize: 12}}>{"Didn't Recieve OPT"} ! <button type="submit" className="font-roboto font-underline text-button  hover:text-br">Resend</button> </div>
         <div >
           <Link href="../Forgotpasswordpage/newpwd">
             <button type="submit"
