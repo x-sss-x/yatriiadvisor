@@ -38,14 +38,14 @@ const ProfileDetails: React.FC<ProfileDetailsProps> = ({
   };
 
   return (
-    <div>
+    <div className="w-full px-20 py-5 flex flex-col gap-3">
       <h3 className="font-roboto text-button font-bold">Profile Details</h3>
       <p>
         <strong className="text-hover">Name</strong>
         <div className="">
           {" "}
           {isEditing ? (
-            <input className="border-b-hover rounded-lg border-2" value={name} onChange={(e) => setName(e.target.value)} />
+            <input className="border-b-hover rounded-lg border-2 py-2 px-3 w-full" value={name} onChange={(e) => setName(e.target.value)} />
           ) : (
             name
           )}
@@ -57,7 +57,7 @@ const ProfileDetails: React.FC<ProfileDetailsProps> = ({
           {" "}
           {isEditing ? (
             <input
-            className="border-b-hover rounded-lg border-2"
+            className="border-b-hover rounded-lg border-2 py-2 px-3 w-full"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
             />
@@ -72,7 +72,7 @@ const ProfileDetails: React.FC<ProfileDetailsProps> = ({
           {" "}
           {isEditing ? (
             <input
-            className="border-b-hover rounded-lg border-2"
+            className="border-b-hover rounded-lg border-2 py-2 px-3 w-full"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
             />
@@ -87,7 +87,7 @@ const ProfileDetails: React.FC<ProfileDetailsProps> = ({
           {" "}
           {isEditing ? (
             <input 
-            className="border-b-hover rounded-lg border-2" value={mobile} onChange={(e) => setMobile(e.target.value)} />
+            className="border-b-hover rounded-lg border-2 py-2 px-3 w-full" value={mobile} onChange={(e) => setMobile(e.target.value)} />
           ) : (
             mobile
           )}
@@ -98,7 +98,7 @@ const ProfileDetails: React.FC<ProfileDetailsProps> = ({
         <div>
           {" "}
           {isEditing ? (
-            <input className="border-b-hover rounded-lg border-2" value={mailID} onChange={(e) => setMailID(e.target.value)} />
+            <input className="border-b-hover rounded-lg border-2 py-2 px-3 w-full" value={mailID} onChange={(e) => setMailID(e.target.value)} />
           ) : (
             mailID
           )}
@@ -109,7 +109,7 @@ const ProfileDetails: React.FC<ProfileDetailsProps> = ({
         <div>
           {" "}
           {isEditing ? (
-            <input className="border-b-hover rounded-lg border-2"
+            <input className="border-b-hover rounded-lg border-2 py-2 px-3 w-full"
               value={interestedPlace}
               onChange={(e) => setInterestedPlace(e.target.value)}
             />
@@ -120,9 +120,9 @@ const ProfileDetails: React.FC<ProfileDetailsProps> = ({
       </p>
 
       {isEditing ? (
-        <button onClick={handleSaveClick}>Save</button>
+        <button className="py-2 px-3 w-full bg-hover hover:bg-yellow-400 text-slate-900 rounded-md" onClick={handleSaveClick}>Save</button>
       ) : (
-        <button onClick={handleEditClick}>Edit</button>
+        <button className="py-2 px-3 w-full border-hover border-2 hover:bg-yellow-200 text-slate-900 rounded-md" onClick={handleEditClick}>Edit</button>
       )}
     </div>
   );

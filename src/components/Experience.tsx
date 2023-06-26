@@ -21,8 +21,8 @@ const Experience = () => {
   };
 
   return (
-    <div className="container pl-8">
-      <h1 className="text-2xl font-bold font-roboto text-button mb-4">
+    <div className="px-96 w-screen py-10 h-screen bg-gradient-to-t from-button/20 to-button/10">
+      <h1 className="text-2xl font-bold font-roboto text-button mb-4 ">
         Trip Experiences
       </h1>
 
@@ -69,7 +69,7 @@ const Experience = () => {
       </form>
 
       {experiences.length > 0 ? (
-        <div className="pl-8 pr-8">
+        <div className="pl-8 pr-8 pb-28">
           <h2 className="text-xl font-medium font-roboto text-button mb-2">
             Saved Experiences
           </h2>
@@ -78,11 +78,11 @@ const Experience = () => {
               key={index}
               className="border bg-white border-button rounded p-4 mb-4"
             >
-              <h2 className="text-lg font-medium font-roboto text-center  text-hover mb-2">
+              <h2 className="text-lg font-medium font-roboto text-slate-900 mb-2 ">
                 {/* @ts-ignore */}
-                {experience.title}
+                You . {experience.title}
               </h2>
-              <p className="text-lg font-medium font-roboto text-button mb-2">
+              <p className="text-md font-medium font-roboto text-slate-500 mb-2">
                 {/* @ts-ignore */}
                 {experience.description}
               </p>

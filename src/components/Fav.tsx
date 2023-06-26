@@ -1,29 +1,25 @@
-"use client"
-import React from 'react';
+"use client";
+import React from "react";
+import { DestCard } from "./Destination/Destination";
+import { useAppSelector } from "../../store";
+import { FavroitesSelector, PlacesSelector } from "../../store/places";
 
 const FavoritePlaces = () => {
-  const places = [
-    { name: 'Beach', image: '/goa.jpg' },
-    { name: 'Mountain', image: '/Mountain.jpg' },
-    { name: 'City', image: '/city.jpg' },
-  ];
+  const destinations = useAppSelector(FavroitesSelector.selectAll);
 
   return (
-    <div className="flex flex-wrap justify-center">
-      {places.map((place, index) => (
-        <div key={index} className="w-64 m-4">
-          <div className="relative">
-            <img
-              src={place.image}
-              alt={place.name}
-              className="w-full h-40 object-cover rounded-lg"
-            />
-            <div className="absolute bottom-0 left-0 p-2 bg-gray-800 bg-opacity-75 text-white rounded-b-lg">
-              <span>{place.name}</span>
-            </div>
-          </div>
-        </div>
-      ))}
+    <div className="flex justify-center p-10">
+      {destinations.length > 0 ? (
+        <ul className="grid grid-cols-3 gap-4">
+          {destinations.map((destination) => (
+            <DestCard key={destination.id} destination={destination} />
+          ))}
+        </ul>
+      ) : (
+        <p className="text-red-500 font-roboto font-bold text-2xl">
+          No Favorite destinations yet !
+        </p>
+      )}
     </div>
   );
 };

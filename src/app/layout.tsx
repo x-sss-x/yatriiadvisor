@@ -5,8 +5,6 @@ import Providers from "./providers";
 import { AiOutlineBars, AiOutlineClose } from "react-icons/ai";
 import { RiLogoutBoxLine } from "react-icons/ri";
 import {
-  FaBook,
-  FaHandsHelping,
   FaHeart,
   FaHireAHelper,
   FaHome,
@@ -16,6 +14,8 @@ import {
 } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
+import { PlacesData, setAllPlaces } from "../../store/places";
+import { store } from "../../store";
 interface Props {
   children: React.ReactNode;
 }
@@ -26,6 +26,8 @@ export default function RootLayout({ children }: Props) {
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+  store.dispatch(setAllPlaces(PlacesData));
+
   return (
     <html lang="en">
       <body className="overflow-hidden">
@@ -79,13 +81,6 @@ export default function RootLayout({ children }: Props) {
               <FaPaperPlane className="text-button text-2xl" />
               <span>Plans</span>
             </Link>
-            <Link
-              className="flex items-center gap-3 text-xl hover:bg-slate-100 p-2 px-4 rounded-md"
-              href="/DASHBOARD/SharedTrips"
-            >
-              <FaPaperPlane className="text-button text-2xl" />
-              <span>Shared Plans</span>
-            </Link>
             {/* <Link
               className="flex items-center gap-3 text-xl hover:bg-slate-100 p-2 px-4 rounded-md"
               href="#"
@@ -111,7 +106,7 @@ export default function RootLayout({ children }: Props) {
         </div>
 
         <div className="bg-br">
-          <div className="bg-button flex px-5 h-20 border-b border-black items-center justify-between">
+          <div className="bg-button sticky flex w-screen top-0 px-5 h-20 border-b border-black items-center justify-between">
             <div className="logo">
               <Image
                 src="/logo.png" // Replace with the path to your logo image in the public folder
