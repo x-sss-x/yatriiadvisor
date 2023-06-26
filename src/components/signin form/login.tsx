@@ -27,7 +27,7 @@ const Login = () => {
       </div>
       <div style={{ fontSize: 10 }}>
         <div
-          className="font-bold text-button font-roboto flex pt-2 pb-2 container flex pl-4"
+          className="font-bold text-button font-roboto flex pt-2 pb-2 container pl-4"
           style={{ fontSize: 14 }}
         >
           <label htmlFor="username">Username:</label>
