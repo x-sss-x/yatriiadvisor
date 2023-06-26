@@ -1,10 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import RectangleFrame from "@/components/signin form/framebox";
+import { useRouter } from "next/navigation";
 
 const page = () => {
+  
+
   return (
     <div className="container bottom-4 pt-8 pl-8 absolute right-[20px] ">
       <div className="row">
@@ -17,7 +20,7 @@ const page = () => {
           />
         </div>
         <div className="column">
-          <RectangleFrame/>
+          <RectangleFrame />
         </div>
       </div>
       <style jsx>{`

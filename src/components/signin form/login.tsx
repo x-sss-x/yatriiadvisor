@@ -2,13 +2,19 @@
 import React, { useState } from "react";
 import LOG_button from "./LOG_button";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
-  const [username, setUsername] = useState("");
+  const [email, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
 
   const handleLogin = () => {
-    // Handle login logic here
+    if (email == "vishal@gmail.com" && password == "vishal1234") {
+      router.replace("/");
+    } else {
+      alert("Wrong credentials !");
+    }
   };
 
   return (
@@ -19,7 +25,7 @@ const Login = () => {
       >
         <h1>Login</h1>
       </div>
-      <form style={{ fontSize: 10 }}>
+      <div style={{ fontSize: 10 }}>
         <div
           className="font-bold text-button font-roboto flex pt-2 pb-2 container flex pl-4"
           style={{ fontSize: 14 }}
@@ -34,7 +40,7 @@ const Login = () => {
             type="text"
             placeholder="Name"
             id="username"
-            value={username}
+            value={email}
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
@@ -62,13 +68,11 @@ const Login = () => {
             className="pl-15 pr-15 pt-6 container  "
             onClick={handleLogin}
           >
-            <Link href={"/"}>
-              <LOG_button />
-            </Link>
+            <LOG_button />
             <br />
           </button>
         </div>
-      </form>
+      </div>
     </div>
   );
 };

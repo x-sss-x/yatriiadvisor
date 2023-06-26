@@ -97,7 +97,7 @@ export default function RootLayout({ children }: Props) {
             </Link>
             <Link
               className="flex items-center gap-3 text-xl hover:bg-slate-100 p-2 px-4 rounded-md"
-              href="/"
+              href="/Signinpage"
             >
               <RiLogoutBoxLine className="text-button text-2xl" />
               <span>Logout</span>
